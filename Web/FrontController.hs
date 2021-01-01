@@ -5,12 +5,14 @@ import Web.Controller.Prelude
 import Web.View.Layout (defaultLayout)
 
 -- Controller Imports
+import Web.Controller.DonorReg
 import Web.Controller.Static
 
 instance FrontController WebApplication where
     controllers = 
         [ startPage WelcomeAction
         -- Generator Marker
+        , parseRoute @DonorRegController
         ]
 
 instance InitControllerContext WebApplication where
